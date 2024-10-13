@@ -1,0 +1,860 @@
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 400;
+    padding: 8px 16px;
+    position: relative;
+    transition: color 0.3s ease; /* انتقال سلس للون */
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* عرض الخط سيكون بنفس عرض النص */
+    height: 2px; /* سمك الخط */
+    bottom: -5px; /* المسافة بين النص والخط */
+    left: 50%; /* محاذاة الخط مع النص */
+    transform: translateX(-50%) scaleX(0); /* بدء الخط من الصفر */
+    background-color: #000; /* لون الخط */
+    transition: transform 0.3s ease; /* انتقال سلس لظهور الخط */
+}
+
+/* تأثير عند تمرير الفأرة */
+.navbar-nav .nav-link:hover {
+    color: #000;
+}
+
+.navbar-nav .nav-link:hover::after {
+    transform: translateX(-50%) scaleX(1); /* توسيع الخط ليغطي العرض الكامل */
+}
+
+/* استعلامات الوسائط لإزالة الخط في وضع الموبايل */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link::after {
+        display: none; /* إخفاء الخط في وضع الموبايل */
+    }
+}
+
+
+.welcome-and-event-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 30vh;
+    padding: 20px 80px;
+}
+
+.welcome-box, .event-box, .latest-news-box {
+    background-color: #000;
+    color: #fff;
+    border: 4px solid #FFB200;
+    border-radius: 15px;
+    padding: 30px;
+    width: 400px;
+    margin-right: 20px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.welcome-box h2, .event-box h2, .latest-news-box h2 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+    position: relative; /* لجعل الخط تحت العنوان */
+}
+
+.welcome-box span {
+    font-weight: normal;
+}
+
+.welcome-highlight {
+    width: 100px;
+    height: 5px;
+    background-color: #FFB200;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block; /* لجعل الطول يتناسب مع طول الكلمة */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px; /* المسافة بين العنوان والخط */
+    width: 100%; /* عرض الخط */
+    height: 4px; /* سمك الخط */
+    border-radius: 10px;
+    background-color: #FFB200; /* لون الخط */
+    left: 50%; /* تحريك الخط ليتوسط الكلمة */
+    transform: translateX(-50%); /* جعل الخط في منتصف الكلمة */
+}
+
+.event-item {
+    display: flex;
+    align-items: flex-start; /* تعديل لمحاذاة النص في بداية الصورة */
+    margin-bottom: 15px;
+}
+
+.event-image {
+    width: 80px; /* تصغير حجم الصورة */
+    height: 80px; /* ضبط الارتفاع لجعلها مربعة */
+    margin-right: 10px; /* المسافة بين الصورة والنص */
+    border-radius: 10px; /* زوايا مدورة */
+    border: 2px solid #FFB200; /* حدود بلون جميل */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* إضافة ظل */
+}
+
+.event-details {
+    flex-grow: 1; /* جعل العنصر ينمو لملء المساحة */
+}
+
+.event-name {
+    display: -webkit-box; /* استخدام box model */
+    -webkit-box-orient: vertical; /* تعيين الاتجاه عموديًا */
+    -webkit-line-clamp: 2; /* عدد السطور المطلوب عرضها */
+    line-clamp: 2; /* الخاصية القياسية */
+    text-overflow: ellipsis; /* إظهار ثلاث نقاط (...) عند القطع */
+    display: block; /* تأكد من استخدام عرض بلوك */
+    max-height: 40px; /* اضبط الارتفاع الأقصى وفقًا لعدد السطور */
+}
+
+
+.event-button {
+    background-color: #FFB200; /* لون الخلفية */
+    border: none; /* عدم وجود حدود */
+    color: #000; /* لون النص */
+    padding: 2px 9px; /* تقليل الحشو لتصغير حجم الزر */
+    border-radius: 5px; /* الزوايا المدورة */
+    cursor: pointer; /* تغيير المؤشر عند التمرير */
+    margin-top: 10px; /* زيادة المسافة بين الزر واسم الحدث */
+    font-weight:550;
+    font-style:italic;
+}
+
+
+
+/* تصميم البوكسات */
+.boxes-container {
+    display: flex;
+    justify-content: space-around; /* توسيع البوكسات */
+    flex-wrap: wrap; /* السماح باللف حول البوكسات */
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.box {
+    position: relative;
+    width: 250px; /* عرض البوكسات في وضع الشاشة العادية */
+    height: 250px; /* جعل البوكس مربعًا في وضع الشاشة العادية */
+    background-color: black;
+    border: 4px solid #FFB200;
+    border-radius: 15px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.box:hover {
+    transform: scale(1.05); /* تأثير التكبير عند التمرير */
+}
+
+.box-image {
+    width: 100%; /* عرض الصورة بالكامل */
+    height: 100%; /* ارتفاع الصورة بالكامل */
+    object-fit: cover; /* جعل الصورة تغطي البوكس بالكامل */
+    filter: brightness(0.5); /* جعل الصورة داكنة تحت الخلفية */
+    transition: filter 0.3s ease;
+}
+
+.box:hover .box-image {
+    filter: brightness(0.9); /* تفتيح الصورة عند التمرير */
+}
+
+.box-text {
+    position: absolute;
+    bottom: 40px; /* تعديل الموقع ليكون فوق الخط */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 2;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.box:hover .box-text {
+    transform: translateX(-50%) translateY(-10px); /* تحريك النص لأعلى عند التمرير */
+}
+
+.box-line {
+    height: 4px; /* ارتفاع الخط */
+    background-color: #FFB200; /* لون الخط */
+    position: absolute;
+    bottom: 0; /* الموقع أسفل النص مباشرة */
+    left: 50%;
+    transform: translateX(-50%) scaleX(0); /* وضعه تحت النص في المنتصف وإخفاؤه */
+    transition: transform 0.3s ease; /* تأثير التحريك */
+    width: 60%; /* عرض الخط كنسبة من عرض النص */
+}
+
+.box:hover .box-line {
+    transform: translateX(-50%) scaleX(1); /* إظهار الخط عند التمرير */
+}
+
+
+
+
+/* بوكس آخر الأخبار */
+.latest-news-box {
+    position: relative;
+    overflow: hidden; /* لإخفاء أي محتوى زائد */
+    height: 180px; /* زيادة الطول إلى 200 بكسل */
+}
+
+
+/* شريط الأخبار المتحرك */
+.news-marquee {
+    overflow: hidden; /* إخفاء أي محتوى زائد */
+    white-space: nowrap; /* منع التفاف النص */
+    box-sizing: border-box;
+    height: 100%; /* جعل الشريط يأخذ الطول الكامل للبوكس */
+}
+
+.news-list {
+    display: inline-block;
+    animation: scroll 20s linear infinite; /* تقليل مدة الحركة إلى 20 ثانية */
+    will-change: transform; /* تحسين الأداء */
+    padding-top: 10px; /* إضافة حشوة من الأعلى */
+}
+
+
+.news-item {
+    display: inline-block;
+    margin-right: 30px; /* المسافة بين الأخبار */
+}
+
+
+/* حركة الشريط */
+@keyframes scroll {
+    0% {
+        transform: translateX(20%); /* بدء الحركة من اليمين */
+    }
+    100% {
+        transform: translateX(-100%); /* إنهاء الحركة إلى اليسار */
+    }
+}
+
+.news-image {
+    border-radius: 50%; /* لجعل الصور دائرية */
+    border: 2px solid white; /* إضافة حدود بيضاء */
+    width: 60px; /* تحديد عرض الصورة */
+    height: 60px; /* تحديد ارتفاع الصورة */
+    object-fit: cover; /* لضمان تناسق الصور داخل الدائرة */
+    margin-right: 5px; /* إضافة مسافة بين الصورة والنص */
+}
+
+
+.news-item span {
+    display: inline-block; /* جعل النص في سطر واحد مع الصورة */
+    vertical-align: middle; /* محاذاة النص مع الصورة */
+}
+
+
+
+@media (max-width: 768px) {
+    .welcome-and-event-box {
+        flex-direction: column; /* وضع العناصر عمودياً */
+        padding: 20px; /* تقليل الحشو */
+    }
+
+    .welcome-box, .event-box, .latest-news-box {
+        width: 100%; /* جعل البوكسات تأخذ العرض الكامل */
+        margin-bottom: 20px; /* المسافة بين البوكسات */
+    }
+
+    .boxes-container {
+        justify-content: space-between; /* توزيع البوكسات */
+        margin-top: -20px; /* رفع الحاوية لأعلى */
+    }
+
+    .box {
+        width: 48%; /* عرض كل بوكس في وضع الموبايل (مربع) */
+        height: 48%; /* الحفاظ على شكل مربع */
+        margin: 1%; /* هامش صغير بين البوكسات */
+    }
+}
+
+/* .about-us */
+.about-us-section {
+    background-color: #fff; /* خلفية بيضاء فاتحة */
+    color: #333; /* نص بلون غامق */
+    padding: 10px 20px; /* مساحة داخلية */
+    text-align: center; /* محاذاة النص في المنتصف */
+    position: relative; /* لجعل العنصر يعكس تأثيرات */
+    overflow: hidden; /* إخفاء المحتوى الزائد */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    border-radius: 20px 20px 0 0; /* تقويس للأطراف العلوية فقط */
+    border-top: 5px solid #000; /* إطار من الأعلى */
+    margin-top: 30px; /* إضافة مسافة من الأعلى */
+}
+
+
+.about-us-content {
+    position: relative; /* لجعل العناصر الداخلية تعكس التأثيرات */
+}
+
+.about-logo {
+    width: 130px; /* عرض الشعار */
+    height: auto; /* الحفاظ على النسبة الأصلية */
+    margin-bottom: 10px; /* مساحة أسفل الشعار */
+}
+
+.about-logo:hover {
+    transform: scale(1.1); /* تكبير الشعار عند التحويم */
+}
+
+.about-text {
+    max-width: 600px; /* أقصى عرض للنص */
+    margin: 0 auto; /* محاذاة نص في المنتصف */
+    line-height: 1.6; /* زيادة تباعد الأسطر */
+    font-size: 18px; /* حجم الخط */
+}
+
+/* إضافة تأثير للكتابة */
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* بدء من أسفل */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* العودة إلى الموقع الأصلي */
+    }
+}
+
+.about-text h2 {
+    animation: textFadeIn 0.8s ease-out; /* تأثير دخول العنوان */
+    font-size: 24px; /* حجم خط العنوان */
+    margin-bottom: 20px; /* مساحة أسفل العنوان */
+}
+
+.about-text p {
+    animation: textFadeIn 1s ease-out; /* تأثير دخول النص */
+}
+.manager-info {
+    margin-top: 20px; /* مساحة فوق النص الخاص بالمدير */
+    font-size: 1.2em; /* تكبير الخط */
+    color: #000; /* تغيير اللون إلى الأخضر الداكن */
+    animation: fadeIn 1s ease-in-out; /* تأثير دخول */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* البداية من عدم الظهور */
+        transform: translateY(20px); /* بداية من أسفل */
+    }
+    to {
+        opacity: 1; /* النهاية بالظهور */
+        transform: translateY(0); /* العودة إلى الوضع الأصلي */
+    }
+}
+@media (max-width: 768px) {
+    .manager-info {
+        font-size: 0.9em; /* تصغير حجم الخط أكثر */
+        margin-top: 10px; /* تقليل المسافة العلوية */
+        white-space: normal; /* السماح بالتفاف النص */
+    }
+
+    .about-text p {
+        font-size: 14px; /* تصغير حجم النص داخل الفقرة على الموبايل */
+    }
+}
+
+
+/* قسم Tamer Hosny */
+.tamer-hosny-section {
+    margin-top: -2px;
+    padding: 60px 0;
+    background: linear-gradient(135deg, #6420AA, #E1E1E1); 
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid #000; /* الحد العلوي */
+    border-radius: 20px 20px 0 0; /* تقويس للأطراف العلوية فقط */
+    height: 280px; /* الطول الذي تريده هنا */
+}
+
+
+
+.tamer-hosny-container {
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* تأثير الحركة على الخلفية */
+.tamer-hosny-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* طبقة ظلية شفافة */
+    animation: moveBg 10s linear infinite;
+}
+
+
+.tamer-hosny-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* يجعل العناصر تتكيف مع الشاشات الأصغر */
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+}
+
+.tamer-hosny-left-image {
+    width: 150px; /* حجم الصورة */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #000;
+    margin-right: 20px;
+    margin-bottom: 0; /* إزالة المسافة السفلى على الشاشات الكبيرة */
+}
+
+.tamer-hosny-right-text {
+    flex-grow: 1;
+    font-size: 18px;
+    color: #333;
+    text-align: left; /* محاذاة النص إلى اليسار */
+}
+
+.tamer-hosny-right-text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: bold;
+    margin-left: 15px; /* إضافة مسافة من اليسار لتحريك العنوان لليمين */
+}
+
+.tamer-hosny-right-text p {
+    line-height: 1.6;
+    max-width: 800px;
+    color: #000;
+    text-align: justify; /* محاذاة النص لتكون الأطراف متساوية */
+    padding: 0 20px; /* إضافة مسافة من الطرفين (يمين وشمال) */
+}
+
+/* تعديل للشاشات الأصغر */
+@media (max-width: 768px) {
+    .tamer-hosny-section {
+        margin-top: -2px;
+        padding: 40px 0;
+        background: linear-gradient(135deg, #6420AA, #E1E1E1); 
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        border-top: 5px solid #000; /* الحد العلوي */
+        border-radius: 20px 20px 0 0; /* تقويس للأطراف العلوية فقط */
+        height: 370px; /* الطول الذي تريده هنا */
+    }
+    
+    .tamer-hosny-container {
+        position: relative;
+        z-index: 1;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    
+    /* تأثير الحركة على الخلفية */
+    .tamer-hosny-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2); /* طبقة ظلية شفافة */
+        animation: moveBg 10s linear infinite;
+    }
+    
+    .tamer-hosny-container {
+        display: flex;
+        flex-direction: column; /* عرض العناصر عمودياً على الشاشات الصغيرة */
+        align-items: center; /* محاذاة العناصر في الوسط */
+        justify-content: center; /* محاذاة العناصر في الوسط */
+        margin-bottom: 20px;
+    }
+
+    .tamer-hosny-left-image {
+        width: 120px; /* تصغير الصورة على الموبايل */
+        height: 120px;
+        margin-right: 0; /* إزالة المسافة بين الصورة والنص */
+        margin-bottom: 10px; /* إضافة مسافة أسفل الصورة */
+        border: 4.5px solid #000;
+    }
+
+    .tamer-hosny-right-text {
+        text-align: center; /* محاذاة النص في الوسط */
+        max-width: 100%; /* استخدام كامل المساحة المتاحة */
+    }
+
+    .tamer-hosny-right-text h2 {
+        font-size: 25px; /* تصغير العنوان */
+        margin-top: 10px; /* إضافة مساحة أعلى الاسم */
+        margin-right: 15px; /* إضافة مسافة من اليسار لتحريك العنوان لليمين */
+    }
+
+    .tamer-hosny-right-text p {
+        font-size: 14px; /* تقليل حجم النص */
+    }
+}
+
+
+
+
+/* قسم الجوائز */
+.awards-section {
+    position: relative;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 1); /* خلفية سوداء مع شفافية قليلة */
+    padding: 30px 0; 
+    backdrop-filter: blur(15px); /* تأثير التمويه لجعل الخلفية زجاجية */
+    -webkit-backdrop-filter: blur(15px); /* دعم للمتصفحات التي تستخدم Webkit */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+
+.awards-image-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.awards-image {
+    width: 100%;
+    height: auto;
+    max-height: 780px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.awards-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية سوداء شفافة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.awards-text {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* ظل للنص */
+}
+
+.awards-text h3 {
+    font-size: 36px; /* تكبير حجم النص */
+    margin-bottom: 20px;
+    color: #f7d731; /* لون ذهبي */
+    font-weight: bold;
+}
+
+.awards-text p {
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+
+@media (max-width: 768px) {
+    .awards-section {
+        position: relative;
+        width: 100%;
+        background-color: #000; /* خلفية داكنة لمحاكاة الجوائز */
+        padding: 30px 0;
+    }
+    
+    .awards-image-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .awards-image {
+        width: 100%;
+        height: auto;
+        border-radius: 15px; /* حواف دائرية للجوائز */
+        object-fit: cover;
+    }
+    
+    .awards-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* خلفية سوداء شفافة */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+    }
+    
+    .awards-text {
+        color: white;
+        text-align: center;
+        padding: 20px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* ظل للنص */
+    }
+    
+    .awards-text h3 {
+        font-size: 30px; /* تكبير حجم النص */
+        margin-bottom: 20px;
+        color: #f7d731; /* لون ذهبي */
+        font-weight: bold;
+    }
+    
+    .awards-text p {
+        font-size: 16px;
+        max-width: 700px;
+        line-height: 1.8;
+    }
+}
+
+/* General Styles for Contact Us Section */
+.contact-us-section {
+    background: #fff; /* Solid bright white background */
+    padding: 60px 0;
+    text-align: center;
+    color: #333; /* Change text color to dark for contrast */
+}
+
+.contact-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.contact-details-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust the transparency for better readability */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 4px solid #000; /* Changing border color to black */
+    position: relative;
+}
+
+
+.contact-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    margin-right: 10px;
+    font-size: 28px; /* Increased icon size */
+    color: black; /* Change icon color to black */
+}
+
+.contact-details-box h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-details-box p {
+    font-size: 16px;
+    color: #555; /* Change text color for better contrast */
+    margin-bottom: 15px;
+}
+
+.contact-address h4 {
+    font-size: 22px;
+    color: #000;
+    margin-top: 15px;
+}
+
+.contact-gps {
+    margin-top: 15px;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.social-icon i {
+    color: #fff;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.instagram {
+    background: radial-gradient(circle at 30% 107%, #ff512f 0%, #dd2476 100%);
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .contact-details-box h3 {
+        font-size: 24px;
+    }
+
+    .contact-details-box p {
+        font-size: 14px;
+    }
+
+    .contact-address h4 {
+        font-size: 18px;
+    }
+
+    .icons-container {
+        gap: 10px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .contact-gps iframe {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-details-box h3 {
+        font-size: 20px;
+    }
+
+    .contact-details-box p {
+        font-size: 12px;
+    }
+
+    .contact-address h4 {
+        font-size: 16px;
+    }
+
+    .icons-container {
+        gap: 8px;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .contact-gps iframe {
+        height: 160px;
+    }
+}
+
+
+/* Footer Section */
+.footer-section {
+    background-color: #000; /* لون خلفية أسود قوي */
+    color: #fff; /* لون النص */
+    padding: 20px 0; /* حشوة متساوية من الأعلى والأسفل */
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top-left-radius: 20px; /* حد مقوس في الزاوية العليا اليسرى */
+    border-top-right-radius: 20px; /* حد مقوس في الزاوية العليا اليمنى */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+    font-size: 16px; /* حجم النص */
+    margin: 0; /* إزالة الهامش الافتراضي */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* إضافة ظل للنص بلون فاتح */
+    font-weight: bold; /* جعل الخط بولد */
+}
+
+.footer-divider {
+    border-top: 1px solid white; /* خط فاصل أبيض */
+    width: 8%; /* تقليل عرض الخط الفاصل */
+    margin: 10px 0; /* مسافة حول الخط الفاصل */
+}
+
+.powered-text {
+    font-size: 14px; /* حجم النص */
+    color: #fff; /* لون النص */
+    margin: 0px 0; /* مسافة حول النص */
+    font-weight: bold; /* جعل الخط بولد */
+}
+
+.powered-link {
+    font-size: 14px; /* حجم الخط */
+    color: #f7b731; /* لون مختلف لـ OD Development */
+    text-decoration: none; /* إزالة الخط السفلي */
+    transition: color 0.3s; /* تأثير عند التمرير */
+    font-weight: bold; /* جعل الخط بولد */
+}
+
+.powered-link:hover {
+    color: #f7b731; /* تغيير اللون عند التمرير */
+}
+
+
