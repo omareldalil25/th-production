@@ -1,0 +1,294 @@
+.EnayaBethebbak-page {
+    background: linear-gradient(135deg, #482121, #482121); /* تدرج من الوردي الداكن إلى البنفسجي الداكن */
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+}
+
+
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* Bottom player */
+.bottom-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-top: 2px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures space between title and play icon */
+}
+
+.compact-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.song-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.song-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.play-icon {
+    font-size: 20px;
+    color: #fff;
+    background: linear-gradient(145deg, #ff512f, #f09819); /* Gradient background with vibrant colors */
+    border: 3px solid #fff; /* White border to create a standout effect */
+    border-radius: 50%; /* Make it circular */
+    width: 50px; /* Make the width equal to the height */
+    height: 50px; /* Make the height equal to the width */
+    display: flex; /* Align items within the button */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    cursor: pointer;
+    margin-left: auto; /* Keeps the icon to the far right */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds shadow for a 3D effect */
+}
+
+.play-icon:hover {
+    transform: scale(1.2); /* Scale effect on hover */
+    background: linear-gradient(145deg, #ff7e5f, #feb47b); /* Slightly different hover gradient */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Deepens shadow on hover */
+}
+
+
+/* Expanded player */
+.expanded-player {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.expanded-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.expanded-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.expanded-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.time-controls {
+    display: flex;
+    align-items: center; /* محاذاة العناصر عمودياً */
+    justify-content: space-between; /* توزيع العناصر على جانبي الشريط */
+    margin-bottom: 20px;
+    width: 100%; /* جعل العنصر بعرض كامل */
+}
+
+.time-controls input[type="range"] {
+    flex-grow: 1; /* الشريط يأخذ المساحة الأكبر */
+    margin-right: 10px; /* مسافة صغيرة بين الشريط والدقائق */
+    -webkit-appearance: none; /* إزالة المظهر الافتراضي للشريط في متصفحات WebKit */
+    appearance: none; /* إزالة المظهر الافتراضي للشريط */
+}
+
+.time-controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* إزالة المظهر الافتراضي للقبضة في متصفحات WebKit */
+    appearance: none; /* إزالة المظهر الافتراضي للقبضة */
+    width: 20px; /* عرض القبضة */
+    height: 20px; /* طول القبضة */
+    border-radius: 50%; /* جعل القبضة دائرية */
+    background: #ff8c00; /* لون القبضة البرتقالي */
+    cursor: pointer; /* تغيير المؤشر عند التمرير */
+    margin-top: -6px; /* رفع القبضة قليلاً لأعلى لتظهر بشكل جيد */
+}
+
+.time-controls input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%; /* عرض الشريط */
+    height: 8px; /* ارتفاع الشريط */
+    border-radius: 5px; /* جعل الشريط مدور الحواف */
+    background: #000; /* لون الشريط الأسود */
+}
+
+.time-controls input[type="range"]::-moz-range-thumb {
+    width: 20px; /* عرض القبضة */
+    height: 20px; /* طول القبضة */
+    border-radius: 50%; /* جعل القبضة دائرية */
+    background: #ff8c00; /* لون القبضة البرتقالي */
+    cursor: pointer; /* تغيير المؤشر عند التمرير */
+    margin-top: -6px; /* رفع القبضة قليلاً لأعلى لتظهر بشكل جيد */
+}
+
+.time-controls input[type="range"]::-moz-range-track {
+    height: 8px; /* ارتفاع الشريط */
+    border-radius: 5px; /* جعل الشريط مدور الحواف */
+    background: #000; /* لون الشريط الأسود */
+}
+
+.time-controls span {
+    font-size: 14px;
+    white-space: nowrap; /* عدم تكسير النص */
+    text-align: right; /* جعل النص على اليمين */
+    margin-left: 10px; /* لإضافة مسافة بين الدقائق وشريط التحكم */
+}
+
+
+/* control-buttons */
+.control-buttons button {
+    width: 50px; /* عرض الزر */
+    height: 50px; /* طول الزر */
+    margin: 0 10px; /* إضافة مسافة بين الأزرار */
+    border-radius: 50%; /* جعل الأزرار دائرية */
+    border: none; /* إزالة الحدود الافتراضية */
+    transition: background-color 0.3s, transform 0.3s; /* تأثير التحول عند التمرير */
+}
+
+.control-buttons .btn-primary {
+    background-color: #ff8c00; /* لون البرتقالي الأساسي */
+    color: white; /* لون الأيقونة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل لتحسين المظهر */
+}
+
+/* تعديل تأثير الهافر ليكون نفس لون الخلفية */
+.control-buttons .btn-primary:hover {
+    background-color: #ff8c00; /* الحفاظ على نفس اللون عند التمرير */
+}
+
+.control-buttons .btn-secondary {
+    background-color: #000; /* لون الخلفية الأسود */
+    color: white; /* لون الأيقونة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل لتحسين المظهر */
+}
+
+/* تعديل تأثير الهافر ليكون نفس لون الخلفية */
+.control-buttons .btn-secondary:hover {
+    background-color: #000; /* الحفاظ على نفس اللون عند التمرير */
+}
+
+/* تأثير عند التمرير على الأزرار */
+.control-buttons button:hover {
+    transform: scale(1.1); /* تكبير الأزرار قليلاً عند التمرير */
+}
+
+
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-icon:hover {
+    color: #ff5555;
+}
+
+/* song-box */
+.song-box .btn-primary {
+    background-color: #ff8c00; /* لون البرتقالي الأساسي */
+    border: none; /* إزالة الإطار */
+    border-radius: 50%; /* جعل الزر دائري الشكل */
+    width: 50px; /* تحديد العرض */
+    height: 50px; /* تحديد الارتفاع */
+    display: flex; /* محاذاة العناصر داخل الزر */
+    align-items: center; /* توسيط الأيقونة عموديًا */
+    justify-content: center; /* توسيط الأيقونة أفقيًا */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير الانتقال للألوان والتحجيم */
+}
+
+.song-box .btn-primary:hover {
+    background-color: #ff7f00; /* لون برتقالي أغمق عند التحويم */
+    transform: scale(1.1); /* تأثير التحجيم عند التحويم */
+}
+
+.song-box .btn-primary i {
+    color: #fff; /* لون الأيقونة */
+    font-size: 20px; /* حجم الأيقونة */
+}
+.song-list-container {
+    padding-bottom: 50px; /* تعديل هذه القيمة للتحكم في المسافة */
+}
+
+/* album-box */
+.album-box-1 {
+    border: 2px solid #ddd; /* الحدود */
+    padding: 20px; /* الحشو */
+    border-radius: 8px; /* الزوايا المدورة */
+    display: flex; /* استخدام الفليكس */
+    align-items: center; /* محاذاة العناصر عمودياً */
+    transition: transform 0.3s, box-shadow 0.3s; /* تأثير التحول عند التمرير */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل لتحسين المظهر */
+    color: white; /* تغيير لون النص إلى الأبيض */
+}
+
+/* تأثير عند التمرير */
+.album-box-1:hover {
+    transform: scale(1.05); /* تكبير البوكس عند التمرير */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* زيادة الظل عند التمرير */
+}
+
+.album-cover {
+    width: 150px; /* عرض صورة الغلاف */
+    margin-right: 20px; /* المسافة بين الصورة والعنوان */
+    border: 0px solid #000; /* إضافة حدود للصورة */
+    border-radius: 10px; /* جعل الحدود مدورة */
+}
+
+/* استعلامات الوسائط للأجهزة المحمولة */
+@media (max-width: 768px) {
+    .album-box-1 {
+        flex-wrap: nowrap; /* التأكد من عدم تغيير الاتجاه */
+        align-items: center; /* التأكد من محاذاة العناصر في المنتصف */
+    }
+
+    .album-cover {
+        width: 100px; /* تقليل عرض الصورة */
+        margin-right: 10px; /* تقليل المسافة بين الصورة والعنوان */
+        border: 0px solid #000; /* إضافة حدود للصورة */
+        border-radius: 10px; /* جعل الحدود مدورة */
+    }
+
+    h2 {
+        font-size: 19px; /* حجم النص للألبوم على الهواتف */
+        font-weight: bold;
+        margin-top: 10px; /* إضافة مسافة فوق النص */
+    }
+}
+
+
