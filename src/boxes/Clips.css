@@ -1,0 +1,108 @@
+.Clips-page {
+  background: linear-gradient(135deg, #C40C0C, #FF9800);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+}
+
+/* Clip container styles */
+.clip-box {
+  position: relative;
+  border: 4px solid #F5F5F5;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  width: 100%; /* تأكد من ملاءمة العرض */
+  padding-top: 100%; /* لجعلها مربعة */
+  background-size: cover; /* لتغطية الخلفية بالكامل */
+  background-position: center; /* لضبط موضع الصورة */
+}
+
+/* Clip overlay styles */
+.clip-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Text styling inside the overlay */
+.clip-name {
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Show overlay on hover */
+.clip-box:hover .clip-overlay {
+  opacity: 1;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 767px) {
+  .clip-box {
+      margin-bottom: 10px; /* تقليل المسافات بين البوكسات */
+  }
+  
+  .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -5px; /* ضبط المسافات الجانبية */
+      margin-right: -5px; /* ضبط المسافات الجانبية */
+  }
+
+  .col-md-2 {
+      flex: 0 0 33.33%; /* ثلاث بوكسات جنب بعض */
+      padding-left: 5px; /* ضبط المسافات الجانبية */
+      padding-right: 5px; /* ضبط المسافات الجانبية */
+  }
+
+  .clip-name {
+      font-size: 1rem; /* تقليل حجم الخط في وضع الموبايل */
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-2 {
+      flex: 0 0 20%; /* خمسة بوكسات جنب بعض على الشاشات العادية */
+  }
+}
+
+.video-player {
+  position: relative;
+  width: 80%; /* عرض أصغر للفيديو */
+  height: 0;
+  padding-bottom: 45%; /* نسبة 16:9 مع تصغير */
+  overflow: hidden;
+  border-radius: 10px; /* زوايا مستديرة */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+  margin: 20px auto; /* مسافة فوق وتحت مع تمركز */
+}
+
+/* إطار الفيديو */
+.video-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* إزالة الحدود */
+  border-radius: 10px; /* زوايا مستديرة */
+}
+
+/* تحسين العرض على شاشات أصغر */
+@media (max-width: 767px) {
+  .video-player {
+      width: 100%; /* الفيديو يأخذ عرض الشاشة بالكامل */
+      padding-bottom: 56.25%; /* نسبة 16:9 كاملة على الشاشات الصغيرة */
+  }
+}

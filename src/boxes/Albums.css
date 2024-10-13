@@ -1,0 +1,94 @@
+.Albums-page {
+  background: linear-gradient(135deg, #FFEB3B, #FF9800); /* تدرج من الأصفر الفاتح إلى البرتقالي */
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+}
+
+
+@keyframes gradientBackground {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Album container styles */
+.album-box {
+  position: relative;
+  border: 4px solid #F5F5F5; /* لون وشكل جميل للحدود */
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Album hover effect */
+.album-box:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Album image styling */
+.album-image {
+  width: 100%;
+  height: auto; /* تغيير إلى auto لتناسب الارتفاع */
+  object-fit: cover;
+  border: none; /* التأكد من عدم وجود حدود */
+}
+
+/* Overlay styling */
+.album-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Light black overlay */
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Text styling inside the overlay */
+.album-name {
+  font-size: 1.2rem; /* تقليل حجم الخط */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Show overlay on hover */
+.album-box:hover .album-overlay {
+  opacity: 1;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 767px) {
+  .album-box {
+    margin-bottom: 10px; /* تقليل المسافات بين البوكسات */
+  }
+  
+  .row {
+    display: flex; /* استخدام flexbox للصف */
+    flex-wrap: wrap; /* السماح للصف بالتفاف */
+    margin-left: -5px; /* ضبط المسافات الجانبية */
+    margin-right: -5px; /* ضبط المسافات الجانبية */
+  }
+
+  .col-md-2 {
+    flex: 0 0 33.33%; /* ثلاث بوكسات جنب بعض */
+    padding-left: 5px; /* ضبط المسافات الجانبية */
+    padding-right: 5px; /* ضبط المسافات الجانبية */
+  }
+
+  .album-name {
+    font-size: 1rem; /* تقليل حجم الخط في وضع الموبايل */
+  }
+}

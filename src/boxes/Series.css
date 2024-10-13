@@ -1,0 +1,47 @@
+/* Default styling for desktop and larger screens */
+.custom-video-player {
+    min-height: 400px; /* Default height for desktop */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for mobile devices */
+@media (max-width: 768px) {
+    .custom-video-player {
+        min-height: 220px; /* Reduced height for mobile screens */
+    }
+}
+.series-box {
+    margin: 0 15px; /* للتحكم في المسافة الأفقية بين البوكسات */
+}
+.Series-page {
+    padding-bottom: 30px;
+    background: linear-gradient(135deg, #4A00E0, #8E2DE2, #7A1CAC, #AD49E1); /* تدرجات ألوان أكثر نعومة */
+    background-size: 400% 400%;
+    animation: gradientBackground 20s ease infinite; /* حركة بطيئة لتأثير مريح */
+    min-height: 100vh;
+}
+
+/* تأثير الحركة */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Styling for episode buttons */
+.btn-outline-primary {
+    color: #fff;
+    background-color: #7A1CAC; /* لون مختلف للخلفية */
+    border: 2px solid #fff; /* حواف بيضاء لجعل الأزرار واضحة */
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* عند التمرير على الأزرار */
+.btn-outline-primary:hover {
+    background-color: #fff; /* يصبح النص بنفسجي عند التمرير */
+    color: #7A1CAC;
+    border: 2px solid #fff; /* حواف بيضاء لجعل الأزرار واضحة */
+
+}
