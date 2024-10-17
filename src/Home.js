@@ -116,7 +116,12 @@ function Home() {
                         <img src={eventImage1} alt="Event 1" className="event-image" />
                         <div className="event-details">
                             <span className="event-name">Alexandria concert in Antoniadis Garden in Smouha</span>
-                            <button className="event-button">Book Now</button>
+                            <button
+                                className="event-button"
+                                onClick={() => window.location.href = "https://mobile.ticketore-eg.com/event-details/tamar-hosny-fy-askndry"}
+                            >
+                                Book Now
+                            </button>
                         </div>
                     </div>
                     <div className="event-item">
