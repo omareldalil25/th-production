@@ -14,6 +14,8 @@ import newsImage1 from './images/news1.jpg';
 import newsImage2 from './images/news2.jpg';
 import newsImage3 from './images/news3.jpg';
 import newsImage4 from './images/news4.jpg';
+import newsImage5 from './images/news5.jpg';
+import newsImage6 from './images/news6.jpg';
 import tamerImage from './images/tamer_hosny.jpg';
 import awardImage from './images/tamer_awards.jpg';
 import { getAuth } from 'firebase/auth';
@@ -89,6 +91,14 @@ function Home() {
                     <h2 className="section-title">Latest News</h2>
                     <div className="news-marquee">
                         <div className="news-list">
+                            <div className="news-item">
+                                <img src={newsImage6} alt="News 6" className="news-image" />
+                                <span>Alexandria concert at Antoniadis in Music Arena on October 18th</span>
+                            </div>
+                            <div className="news-item">
+                                <img src={newsImage5} alt="News 5" className="news-image" />
+                                <span>On Thursday Tamer Hosny at the Welcome Party at MIU</span>
+                            </div>
                             <div className="news-item">
                                 <img src={newsImage1} alt="News 1" className="news-image" />
                                 <span>Tamer Hosny's new restaurant Adam's Lounge has opened</span>
